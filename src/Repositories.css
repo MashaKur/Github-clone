@@ -1,0 +1,30 @@
+.Repo{
+    width: 877px;
+    height: 112px;
+    margin-left: 85px;
+    margin-bottom:24px;
+}
+.Repo-count{
+    margin:28px 0 29px 85px ;
+}
+.Repo-card{
+    width: 877px;
+    height: 112px;
+    background: white;
+    
+    border-radius: 6px;
+    padding-left: 32px;
+    padding-top: 24px;
+}
+.Repo-name{
+    color: #0064EB;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+.Description{
+    font-size: 16px;
+    line-height: 19px;
+}

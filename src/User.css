@@ -1,0 +1,45 @@
+.Card{
+    width: 292px;
+    height: 431px;
+    margin-top: 46px;
+    margin-left: 56px;
+}
+.Foto{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    margin-bottom: 28px;
+}
+.Name{
+    font-size: 26px;
+    line-height: 33.8px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.Nickname{
+    font-size: 18px;
+    line-height: 22px;
+    color: #0064EB;
+    text-decoration: none;
+}
+.Follow{
+    margin-top: 25px;
+    display: flex;
+    /* justify-content: flex-start; */
+    font-size: 16px;
+    height: 24px;    
+}
+
+.Followers{
+    margin-right: 16px;
+}
+.icon1{
+    height: 24px;
+    width: 24px;
+    margin-right: 8.92px;
+}
+.icon2{
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+}
