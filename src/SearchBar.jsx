@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import { useRouteMatch } from 'react-router';
+// import User from './User';
+// import Repositories from './Repositories';
 
-// import './index.css';
 
 
-export default function SearchBar(props){
+export default function SearchBar(){
     const [username, setUsername] = useState('')
     
     const handleSubmit = event => {
@@ -19,15 +19,17 @@ export default function SearchBar(props){
 
     
     return (
-        <form onSubmit={handleSubmit}>
+        
         <input
             type="text"
             value={username}
-            onChange={event => setUsername(event.target.value)}
+            onChange={handleSubmit
+                // event => setUsername(event.target.value)
+            }
             placeholder="GitHub username"
-            required
         />
-        <button type="submit">Add card</button>
-        </form>
+       
+        
+        
     )
     }

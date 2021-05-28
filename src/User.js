@@ -3,6 +3,7 @@ import {fetchData} from "./api.js";
 import './User.css';
 import followers from "./images/followers.png";
 import following from "./images/following.png";
+// import SearchBar from "./SearchBar.js";
 
 
 export default function User() {
