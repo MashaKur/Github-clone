@@ -1,35 +1,54 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import axios from "axios";
 // import User from './User';
 // import Repositories from './Repositories';
 
 
 
-export default function SearchBar(){
-    const [username, setUsername] = useState('')
-    
-    const handleSubmit = event => {
-        event.preventDefault()
-    
-        axios.get(`https://api.github.com/users/${username}`)
-        .then(resp => {
-        setUsername(resp.data)
+export default function SearchBar(props){
+    const [name, setName] = useState('');
+
+    useEffect(() => {
+        axios.get(`https://api.github.com/users/MashaKur`)
+        .then(data => {
+            props.setProfileData(data.data);
+            return data.data
+        })
+        .then((info)=>{
+            axios.get(`https://api.github.com/users/MashaKur/repos`)
+            .then(res => {
+                props.setProfileData({
+                    ...info,
+                    repos: res.data,
+                });
             })
+        })
+    }, []);
+
+    const handleSubmit = e => {
+        // event.preventDefault()
+        
+        axios.get(`https://api.github.com/users/${name}`)
+        .then(data => {
+            props.setProfileData(data.data);
+            return data.data
+        })
+        .then((info)=>{
+            axios.get(`https://api.github.com/users/${name}/repos`)
+            .then(res => {
+                props.setProfileData({
+                    ...info,
+                    repos: res.data,
+                });
+            });
+        });
     };
 
     
     return (
-        
-        <input
-            type="text"
-            value={username}
-            onChange={handleSubmit
-                // event => setUsername(event.target.value)
-            }
-            placeholder="GitHub username"
-        />
-       
-        
-        
+        <div>
+            <input value={name} type="text" onChange={(e)=> setName(e.target.value)} />
+            <button onClick={handleSubmit} >button</button>
+        </div>  
     )
     }
