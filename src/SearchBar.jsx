@@ -1,9 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import axios from "axios";
-// import User from './User';
-// import Repositories from './Repositories';
-
-
+import './Header.css';
 
 export default function SearchBar(props){
     const [name, setName] = useState('');
@@ -23,12 +20,18 @@ export default function SearchBar(props){
                 });
             })
         })
+        // return (
+        //     <div>
+        //         введите имя пользователя 
+        //     </div>
+        // )
     }, []);
 
     const handleSubmit = e => {
-        // event.preventDefault()
+        e.preventDefault()
         
-        axios.get(`https://api.github.com/users/${name}`)
+        // if (e.keyCode === 13) {
+          axios.get(`https://api.github.com/users/${name}`)
         .then(data => {
             props.setProfileData(data.data);
             return data.data
@@ -41,14 +44,17 @@ export default function SearchBar(props){
                     repos: res.data,
                 });
             });
-        });
+        });  
+        // }
+        
     };
 
     
     return (
-        <div>
-            <input value={name} type="text" onChange={(e)=> setName(e.target.value)} />
+        <form className="Search" >
+            <span className = "Icon" ><i className = "fa fa-search"></i></span >
+            <input value={name} type="text" placeholder="Enter GitHub username" onChange={(e)=> setName(e.target.value)}  />
             <button onClick={handleSubmit} >button</button>
-        </div>  
+        </form>  
     )
     }

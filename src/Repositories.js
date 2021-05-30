@@ -1,18 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {fetchData} from "./api.js";
+import React from 'react';
 import './Repositories.css';
 
 
 export default function Repositories(props) {
-    // const URL = 'https://api.github.com/users/MashaKur/repos';
-    // const [repo, setRepo] = useState([])
-    // useEffect(() => {
-    //     const fetchAPI = async () => {
-    //         setRepo(await fetchData(URL))
-    //     }
-    //     fetchAPI();
-    //     console.log(repo)
-    // }, [setRepo])
 
     return ( 
         <div>
