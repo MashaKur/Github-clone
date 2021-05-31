@@ -1,12 +1,9 @@
 import './Header.css';
 import SearchBar from './SearchBar';
-import logo from './images/logo.png';
+import logo from '../images/logo.png';
 
 
 function Header(props) {
-
-  
-
     return ( 
         <header className = "App-header" >
             <img src = { logo } className = "App-logo"alt = "logo" />

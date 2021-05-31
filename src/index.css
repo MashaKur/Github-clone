@@ -10,3 +10,8 @@ body{
 main{
     display: flex;
 }
+@media (max-width: 1320px){
+    main{
+        display: block;
+    }
+}

@@ -2,6 +2,7 @@
     background-color: #0064EB;
     height: 72px;
     width: 100%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
 }
@@ -33,4 +34,13 @@ input {
     outline: none;
     border-radius: 6px;
     padding: 8px 0 8px 44px;
+}
+button{
+    background-color: #0064EB;
+    border-width: 0;
+}
+@media (max-width: 610px){
+    input{
+        width: 200px;
+    }
 }
