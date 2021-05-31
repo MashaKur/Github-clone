@@ -2,12 +2,8 @@ import React, {useState, useEffect} from 'react';
 import './User.css';
 import followers from "../images/followers.png";
 import following from "../images/following.png";
-import ReactPaginate from "react-paginate";
 
 export default function User(props) {
-    // useEffect(() => {
-    //     console.log(props.profileData);
-    // }, [props]);
  
     return (     
             <div className = "Card" >

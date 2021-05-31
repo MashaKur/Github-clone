@@ -1,0 +1,9 @@
+.userNotFound{
+    text-align: center;
+    margin-top: 212px;
+}
+.userNotFound p{
+    font-size: 22px;
+    line-height: 31px;
+    color:#808080;
+}

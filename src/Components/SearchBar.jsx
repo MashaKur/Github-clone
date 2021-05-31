@@ -31,12 +31,10 @@ export default function SearchBar(props){
             return data.data 
         })
         .catch((dt) => {
-            console.log('daonovnodsvn')
-            console.log(dt.response.status)
             props.setProfileData(dt.response.status);
         })
         .then((info)=>{
-            axios.get(`https://api.github.com/users/${name}/repos?page=${page}&per_page=4`)
+            axios.get(`https://api.github.com/users/${name}/repos`)
             .then(res => {
                 props.setProfileData({
                     ...info,
